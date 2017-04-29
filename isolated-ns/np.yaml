@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: NetworkPolicy
+metadata:
+ name: np
+spec:
+ podSelector:
+  matchLabels:
+    run: nginx
+ ingress:
+  - from:
+     - namespaceSelector:
+        matchLabels:
+         project: default
+     - podSelector:
+        matchLabels:
+         app: ubuntuapp
+    ports:
+     - protocol: tcp
+       port: 80
