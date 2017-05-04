@@ -98,6 +98,7 @@ echo
 
 echo '#Apply network policy to allow traffic between ubuntupapp and web-servers in isolated ns'
 echo ------------------------------------------------------------------------------------------
+echo 'kubectl create -f isolated-ns/network-policy.yaml -n isolated-ns'
 kubectl create -f isolated-ns/network-policy.yaml -n isolated-ns
 read -p "Press enter to continue" pause
 echo
@@ -114,6 +115,8 @@ echo
 
 echo '#Creation of a Dev Web Server '
 echo -----------------------------------------------------------
+echo 'kubectl create -f ingress-services/web-app-rc-dev.yaml'
+echo 'kubectl create -f ingress-services/web-app-svc-dev.yaml'
 kubectl create -f ingress-services/web-app-rc-dev.yaml
 kubectl create -f ingress-services/web-app-svc-dev.yaml
 read -p "Press enter to continue" pause
@@ -121,6 +124,8 @@ echo
 
 echo '#Creation of a QA Web Server '
 echo -----------------------------------------------------------
+echo 'kubectl create -f ingress-services/web-app-rc-qa.yaml'
+echo 'kubectl create -f ingress-services/web-app-svc-qa.yaml'
 kubectl create -f ingress-services/web-app-rc-qa.yaml
 kubectl create -f ingress-services/web-app-svc-qa.yaml
 read -p "Press enter to continue" pause
@@ -128,6 +133,7 @@ echo
 
 echo '#Creation of a Fanout Ingress Service for Dev & QA Web Servers '
 echo -----------------------------------------------------------------
+echo 'kubectl create -f ingress-services/web-app-fanout-ingress.yaml'
 kubectl create -f ingress-services/web-app-fanout-ingress.yaml
 read -p "Press enter to continue" pause
 echo
