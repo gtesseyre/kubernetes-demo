@@ -157,7 +157,7 @@ kubectl delete -f default-pod-service/contrail-frontend.yaml
 kubectl delete -f isolated-ns/network-policy.yaml -n isolated-ns
 kubectl delete -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns
 kubectl delete -f isolated-ns/ubuntu.yaml -n isolated-ns
-kubectl delete -f isolated-ns/isolated-ns1.yaml
+kubectl delete -f isolated-ns/isolated-ns.yaml
 kubectl delete -f ingress-services/web-app-fanout-ingress.yaml
 kubectl delete -f ingress-services/web-app-svc-qa.yaml
 kubectl delete -f ingress-services/web-app-rc-qa.yaml
