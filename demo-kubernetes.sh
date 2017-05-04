@@ -58,12 +58,14 @@ echo
 
 echo '#Creation of an isolated namespace'
 echo ------------------------------------
+echo 'kubectl create -f isolated-ns/isolated-ns.yaml'
 kubectl create -f isolated-ns/isolated-ns.yaml
 read -p "Press enter to continue" pause
 echo
 
 echo '#Creation of a web service in this isolated namespace'
 echo -------------------------------------------------------
+echo 'kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns'
 kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns
 read -p "Press enter to continue" pause
 echo
@@ -75,6 +77,7 @@ echo
 
 echo '#Creation of an ubuntu app in the isolated namespace'
 echo -------------------------------------------------------
+echo 'kubectl create -f isolated-ns/nginx-server-isolated-ns.yaml -n isolated-ns'
 kubectl create -f isolated-ns/ubuntu.yaml -n isolated-ns
 read -p "Press enter to continue" pause
 echo
